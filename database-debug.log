@@ -1,0 +1,14 @@
+04:14:46.263 [NamespaceSystem-akka.actor.default-dispatcher-4] INFO akka.event.slf4j.Slf4jLogger - Slf4jLogger started
+04:14:46.367 [main] INFO com.firebase.server.forge.App$ - Listening at 127.0.0.1:9000
+04:14:50.408 [NamespaceSystem-akka.actor.default-dispatcher-4] INFO com.firebase.core.namespace.NamespaceActor - stoa-ed-default-rtdb successfully activated FBKV (SurveyIdle(0)) wait: 72ms, init: 0ms
+04:14:50.453 [NamespaceSystem-blocking-namespace-operation-dispatcher-6] INFO com.firebase.core.namespace.StateManager - Namespace stoa-ed-default-rtdb status Active to Active
+04:15:59.051 [FirebaseWorkerPool-1-4] WARN com.firebase.core.persistence.backend.dummy.EmulatorMetadataPersistence - Multiple projectIds are not recommended in single project mode. Requested 
+namespace stoa-ed, but the emulator is configured for stoa-ed-default-rtdb. To 
+opt-out of single project mode add/set the singleProjectMode: false property in 
+the firebase.json emulators config. 
+04:15:59.054 [NamespaceSystem-akka.actor.default-dispatcher-8] INFO com.firebase.core.namespace.NamespaceActor - stoa-ed successfully activated FBKV (SurveyIdle(0)) wait: 1ms, init: 0ms
+04:23:15.313 [Thread-0] INFO com.firebase.server.forge.App$ - Attempting graceful shutdown.
+04:23:15.323 [NamespaceSystem-akka.actor.default-dispatcher-18] INFO com.firebase.core.namespace.Terminator$Terminator - 2 actors left to terminate: stoa-ed-default-rtdb, stoa-ed
+04:23:15.332 [NamespaceSystem-akka.actor.default-dispatcher-19] INFO com.firebase.core.namespace.NamespaceActor - stopped namespace actor for stoa-ed
+04:23:15.332 [NamespaceSystem-akka.actor.default-dispatcher-20] INFO com.firebase.core.namespace.NamespaceActor - stopped namespace actor for stoa-ed-default-rtdb
+04:23:15.337 [Thread-0] INFO com.firebase.server.forge.App$ - Graceful shutdown complete.
