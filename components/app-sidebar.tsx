@@ -67,19 +67,19 @@ let data = {
       items: [
         {
           title: "Global Hub",
-          url: "/dashboard/stoa",
+          url: "/dashboard/synergyhub",
         },
         {
           title: "AI chat",
-          url: "/dashboard/stoa/aichat",
+          url: "/dashboard/synergyhub/aichat",
         },
         {
           title: "MultiModel AI",
-          url: "/dashboard/stoa/multi/mutlim",
+          url: "/dashboard/synergyhub/multi/mutlim",
         },
         {
           title: "Comfort Hub",
-          url: "/dashboard/stoa/comforthub",
+          url: "/dashboard/synergyhub/comforthub",
         },
 
 
