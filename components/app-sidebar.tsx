@@ -60,6 +60,23 @@ let data = {
   ],
   navMain: [
     {
+      title: "DashBoard",
+      url: "/dashboard/OverviewDashboard",
+      icon: LayoutDashboard,
+      isActive: false,
+      items: [
+        {
+          title: "Outline",
+          url: "/dashboard/dash/overviewDashboard",
+        },
+        {
+          title: "Credentials",
+          url: "/dashboard/dash/credentialsDashboard",
+        },
+      ],
+    },
+
+    {
       title: "Synergy Hub",
       url: "/dashboard/OverviewDashboard",
       icon: LayoutDashboard,
@@ -84,22 +101,6 @@ let data = {
 
 
 
-      ],
-    },
-    {
-      title: "DashBoard",
-      url: "/dashboard/OverviewDashboard",
-      icon: LayoutDashboard,
-      isActive: false,
-      items: [
-        {
-          title: "Outline",
-          url: "/dashboard/dash/overviewDashboard",
-        },
-        {
-          title: "Credentials",
-          url: "/dashboard/dash/credentialsDashboard",
-        },
       ],
     },
     {

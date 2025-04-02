@@ -1,69 +1,113 @@
-"use client"
+"use client";
 
-import { DonutChartComponent } from "@/components/charts/donutchart";
-import { DummyActivityChart } from "@/components/charts/dummyActivitychart";
-import { PieChartComponent } from "@/components/charts/piechart";
-import {
-  Breadcrumb,
-  BreadcrumbItem,
-  BreadcrumbLink,
-  BreadcrumbList,
-  BreadcrumbPage,
-  BreadcrumbSeparator,
-} from "@/components/ui/breadcrumb"
-import { Separator } from "@/components/ui/separator"
-import {
-  SidebarInset,
-  SidebarTrigger,
-} from "@/components/ui/sidebar"
-import { ModeToggle } from "@/components/ui/toggle-theme";
+import React, { useEffect, useState } from "react";
+import { auth, db } from "@/lib/firebase/firebase";
+import { doc, getDoc } from "firebase/firestore";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Loader2, User, CheckCircle, Briefcase } from "lucide-react";
 
-export default function OverviewDashboard() {
+const UserPortfolio = () => {
+  const user = auth.currentUser;
+  interface UserData {
+    username?: string;
+    skills?: string[];
+    achievements?: string[];
+    projects?: { name: string; link: string }[];
+  }
 
+  const [userData, setUserData] = useState<UserData | null>(null);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    if (user) {
+      const userRef = doc(db, "users", user.uid);
+      getDoc(userRef)
+        .then((docSnap) => {
+          if (docSnap.exists()) {
+            setUserData(docSnap.data());
+          }
+        })
+        .catch((error) => console.error("Error fetching user data:", error))
+        .finally(() => setLoading(false));
+    }
+  }, [user]);
+
+  if (loading) {
+    return (
+      <div className="flex justify-center items-center h-screen">
+        <Loader2 className="animate-spin h-10 w-10 text-gray-500" />
+      </div>
+    );
+  }
+
+  if (!userData) {
+    return <p className="text-center text-lg">No portfolio data available.</p>;
+  }
 
   return (
-    <SidebarInset className="bg-secondary/48 overflow-scroll max-h-screen">
-    <header className="flex h-16 shrink-0 items-center gap-2 transition-[width,height] ease-linear group-has-[[data-collapsible=icon]]/sidebar-wrapper:h-12">
-      <div className="flex items-center gap-2 px-4">
-        <SidebarTrigger className="-ml-1" />
-        <Separator orientation="vertical" className="mr-2 h-4" />
-        <Breadcrumb>
-          <BreadcrumbList>
-            <BreadcrumbItem className="hidden md:block">
-              <BreadcrumbLink href="#">
-                Building Your Application
-              </BreadcrumbLink>
-            </BreadcrumbItem>
-            <BreadcrumbSeparator className="hidden md:block" />
-            <BreadcrumbItem>
-              <BreadcrumbPage>Data Fetching</BreadcrumbPage>
-            </BreadcrumbItem>
-          </BreadcrumbList>
-        </Breadcrumb>
-      </div>
-      <div className="ml-auto flex items-center gap-2 px-4">
-        <ModeToggle />
-      </div>
-    </header>
-    <div className="flex flex-1 flex-col gap-4 p-4 pt-0">
-      <div className="grid auto-rows-min gap-4 md:grid-cols-3">
-        <div className="aspect-video rounded-xl bg-muted/50" >
-        <PieChartComponent/>
-        </div>
-        <div className="aspect-video rounded-xl bg-muted/50" >
-        <DonutChartComponent/>
-        </div>
-        <div className="aspect-video rounded-xl bg-muted/50" >
-        <DonutChartComponent/>
-        </div>
-      </div>
-      <div className="min-h-[100vh] flex-1 rounded-xl bg-muted/50 md:min-h-min">
-        <DummyActivityChart/>
-      </div>
-      <div className="min-h-[100vh] flex-1 rounded-xl bg-muted/50 md:min-h-min">
-        <DummyActivityChart/>
-      </div>
+    <div className="max-w-3xl mx-auto p-6">
+      <Card className="shadow-lg rounded-xl">
+        <CardHeader className="text-center">
+          <User className="h-14 w-14 mx-auto text-gray-700" />
+          <CardTitle className="text-2xl font-semibold mt-2">{userData.username || "Unnamed User"}</CardTitle>
+          <p className="text-gray-500">{user?.email || "No email available"}</p>
+        </CardHeader>
+        <CardContent className="space-y-6">
+          {/* Skills Section */}
+          <div>
+            <h3 className="text-lg font-semibold mb-2">Skills</h3>
+            {userData.skills && userData.skills.length > 0 ? (
+              <ul className="flex flex-wrap gap-2">
+                {userData.skills.map((skill, index) => (
+                  <span key={index} className="bg-blue-500 text-white px-3 py-1 rounded-full text-sm">
+                    {skill}
+                  </span>
+                ))}
+              </ul>
+            ) : (
+              <p className="text-gray-500">No skills added yet.</p>
+            )}
+          </div>
+
+          {/* Achievements Section */}
+          <div>
+            <h3 className="text-lg font-semibold mb-2">Achievements</h3>
+            {userData.achievements && userData.achievements.length > 0 ? (
+              <ul className="list-disc pl-5">
+                {userData.achievements.map((achievement, index) => (
+                  <li key={index} className="text-gray-700 flex items-center gap-2">
+                    <CheckCircle className="text-green-500 h-5 w-5" />
+                    {achievement}
+                  </li>
+                ))}
+              </ul>
+            ) : (
+              <p className="text-gray-500">No achievements recorded.</p>
+            )}
+          </div>
+
+          {/* Projects Section */}
+          <div>
+            <h3 className="text-lg font-semibold mb-2">Projects</h3>
+            {userData.projects && userData.projects.length > 0 ? (
+              <ul className="list-disc pl-5">
+                {userData.projects.map((project, index) => (
+                  <li key={index} className="text-gray-700 flex items-center gap-2">
+                    <Briefcase className="text-indigo-500 h-5 w-5" />
+                    <a href={project.link} target="_blank" rel="noopener noreferrer" className="text-blue-600 underline">
+                      {project.name}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            ) : (
+              <p className="text-gray-500">No projects added yet.</p>
+            )}
+          </div>
+        </CardContent>
+      </Card>
     </div>
-  </SidebarInset>
   );
-}
+};
+
+export default UserPortfolio;
