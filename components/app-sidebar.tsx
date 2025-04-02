@@ -215,7 +215,7 @@ let data = {
   ],
   projects: [
     {
-      name: "Create Project",
+      name: "Project Hub",
       url: "/dashboard/projects",
       icon: Frame,
     },
