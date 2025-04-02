@@ -69,7 +69,7 @@ export default function ProjectCreator() {
 
   return (
     <div className="p-12 max-w-6xl mx-auto space-y-8 bg-black text-white shadow-xl rounded-lg w-full min-h-screen">
-      <h1 className="text-4xl font-bold text-center">Project Creator</h1>
+      <h1 className="text-4xl font-bold text-center">Project Hub</h1>
 
       {/* Project Type Selection */}
       <div className="border-t border-gray-700 pt-6 w-2/3 mx-auto">
