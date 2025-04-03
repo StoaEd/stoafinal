@@ -139,6 +139,11 @@ let data = {
           title: "Learn From Scratch With Help",
           url: "/dashboard/subjects/lfsh",
         },
+        {
+          title: "Learn Sign Language",
+          url: "/dashboard/subjects/signlanguage",
+        },
+
 
       ],
     },
