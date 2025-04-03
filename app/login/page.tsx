@@ -41,7 +41,7 @@ export default function AuthPage() {
       await setDoc(doc(db, 'users', user.uid), {
         lastLogin: serverTimestamp(),
       }, { merge: true });
-      router.push('/dashboard');
+      router.push('/dashboard/dash/overviewDashboard');
     } catch (error) {
       handleAuthError(error as AuthError);
     } finally {
@@ -71,7 +71,7 @@ export default function AuthPage() {
         chatIds: [],
       });
       sessionStorage.setItem('user', JSON.stringify(user));
-      router.push('/dashboard');
+      router.push('/dashboarddash/overviewDashboard');
     } catch (error) {
       setError('Failed to sign up. Please try again.');
       console.error(error);

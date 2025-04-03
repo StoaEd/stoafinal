@@ -173,7 +173,7 @@ const UserDashboard = () => {
               </div>
               <div className="mt-2 space-y-1">
                 {achievements.map((achievement, index) => (
-                  <div key={index} className="flex items-center justify-between p-2 bg-gray-200 rounded">
+                  <div key={index} className="flex items-center justify-between p-2 bg-balack rounded">
                     <span>{achievement}</span>
                     <X className="cursor-pointer" onClick={() => removeAchievement(index)} />
                   </div>
