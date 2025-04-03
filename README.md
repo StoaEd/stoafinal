@@ -20,3 +20,4 @@ v0.1
 - Ui fixes
 - Added notes
 - Added routes for dashboards
+- 
