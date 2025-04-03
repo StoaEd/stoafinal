@@ -4,7 +4,9 @@
 
 import { AppSidebar } from "@/components/app-sidebar";
 
-import { SidebarProvider } from "@/components/ui/sidebar";
+import { SidebarInset, SidebarProvider } from "@/components/ui/sidebar";
+import HeaderWithBreadcrumbs from "@/components/ui/ui-templates/header-with-breadcrumbs";
+
 
 
 import { useEffect } from 'react';
@@ -52,7 +54,11 @@ export default function DashBoard({
   return (
     <SidebarProvider>
       <AppSidebar className="bg-secondary/50"/>
+      <SidebarInset className="bg-secondary/47">
+      <HeaderWithBreadcrumbs />
       {children}
+      </SidebarInset>
+
     </SidebarProvider>
   );
 }
