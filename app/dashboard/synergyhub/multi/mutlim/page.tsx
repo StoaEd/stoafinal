@@ -26,7 +26,6 @@ const HumanMessage = ({ text }: { text: string }) => (
 const GeminiMessage = ({ text }: { text: string }) => (
   <div className="flex gap-3 items-start">
     <Avatar className="h-8 w-8 bg-blue-600">
-      <AvatarImage src="/avatars/gemini.png" alt="Gemini" />
       <AvatarFallback>AI</AvatarFallback>
     </Avatar>
     <div className="flex-1 space-y-2">
