@@ -7,7 +7,7 @@ import { BasicBackgroundPattern } from "@/components/ui/background-patterns/basi
 const teamMembers = [
   {
     name: "Paul Isaiah",
-    title: "Founder & CEO",
+    title: "Co-Founder & CEO",
     bio: "Winner of Smart India Hackathon 2024",
     imageUrl: "/team-pics/person2f.jpeg",
   },
