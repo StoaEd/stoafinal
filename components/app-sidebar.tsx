@@ -42,16 +42,16 @@ let data = {
     avatar: "/avatars/vercel.svg",
   },
   subjects: [
-    {
-      name: "Personal",
-      logo: GalleryVerticalEnd,
-      plan: "Pro",
-    },
-    {
-      name: "School",
-      logo: AudioWaveform,
-      plan: "School",
-    },
+    // {
+    //   name: "Personal",
+    //   logo: GalleryVerticalEnd,
+    //   plan: "Pro",
+    // },
+    // {
+    //   name: "School",
+    //   logo: AudioWaveform,
+    //   plan: "School",
+    // },
     {
       name: "Academic",
       logo: Command,

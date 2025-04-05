@@ -1,13 +1,4 @@
 "use client";
-import {
-  Breadcrumb,
-  BreadcrumbItem,
-  BreadcrumbLink,
-  BreadcrumbList,
-} from "@/components/ui/breadcrumb";
-import { Separator } from "@/components/ui/separator";
-import { SidebarTrigger, SidebarInset } from "@/components/ui/sidebar";
-import { ModeToggle } from "@/components/ui/toggle-theme";
 import { getCurrentUserId } from "@/lib/firebase/auth";
 
 import { db } from "@/lib/firebase/firebase";

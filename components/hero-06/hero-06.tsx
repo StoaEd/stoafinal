@@ -17,9 +17,7 @@ const Hero06 = () => {
           STOA
         </h1>
         <p className="mt-6 text-[17px] md:text-lg">
-          Explore a collection of Shadcn UI blocks and components, ready to
-          preview and copy. Streamline your development workflow with
-          easy-to-implement examples.
+          Scalable, Tailored, Open and Accessible
         </p>
         <div className="mt-12 flex items-center justify-center gap-4">
           <Button size="lg" className="rounded-full text-base">
