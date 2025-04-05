@@ -19,6 +19,16 @@ const getRank = (score: number) => {
   return "Bronze";
 };
 
+const getProgressPercentage = (score: number) => {
+  if (score >= 600) return 100;
+  if (score >= 351) return 85;
+  if (score >= 251) return 70;
+  if (score >= 141) return 55;
+  if (score >= 71) return 40;
+  if (score >= 31) return 25;
+  return (score / 31) * 25; // For Bronze rank
+};
+
 const getMonthName = (monthIndex: number) => {
   return new Date(2025, monthIndex).toLocaleString("default", { month: "long" });
 };
@@ -100,27 +110,31 @@ const GradingSystem: React.FC = () => {
   const rank = getRank(totalScore);
 
   return (
-    <div className="p-6 max-w-lg mx-auto ">
-      <h1 className="text-2xl font-bold text-center mb-4">Grading System</h1>
-      <Card className="shadow-lg pb-4 p-4 bg-secondary ">
+    <div className="p-6 max-w-lg mx-auto bg-transparent min-h-screen">
+      <h1 className="text-3xl font-extrabold text-center mb-6 text-primary">Grading System</h1>
+      <Card className="shadow-lg pb-6 p-6 bg-secondary rounded-lg border border-primary/10">
         <CardContent>
-          <p className="text-lg font-semibold text-center">Your Score: {totalScore}</p>
-          <div className="w-full mt-4 relative h-6 bg-gray-200 rounded-lg overflow-hidden">
+          <p className="text-lg font-semibold text-center text-primary">Your Score: {totalScore}</p>
+          <div className="w-full mt-6 relative h-6 bg-gray-300 rounded-full overflow-hidden">
             <Progress
-              style={{ width: `${Math.min(totalScore / 6, 100)}%` }} // Adjusted scaling
-              className="h-full bg-green-500 transition-all duration-500"
+              style={{ width: `${getProgressPercentage(totalScore)}%` }}
+              className="h-full bg-gradient-to-r from-secondary to-primary transition-all duration-500"
             />
           </div>
-          <p className="text-center mt-4 text-xl font-bold">Rank: {rank}</p>
+          <p className="text-center mt-6 text-2xl font-bold text-primary">Rank: {rank}</p>
 
           {badge && (
-            <p className="text-center mt-2 text-lg font-semibold">
-              Your Badge: {badge} {topMonth && `(Conqueror - ${topMonth})`}
+            <p className="text-center mt-4 text-lg font-semibold text-primary">
+              Your Badge: <span className="text-yellow-500">{badge}</span>{" "}
+              {topMonth && <span className="text-gray-500">(Conqueror - {topMonth})</span>}
             </p>
           )}
 
-          <div className="text-center mt-4">
-            <Button onClick={() => router.push("/dashboard/quiz")} className="mt-2">
+          <div className="text-center mt-6">
+            <Button
+              onClick={() => router.push("/dashboard/quiz")}
+              className="mt-2  hover:bg-primary text-secondary font-medium px-4 py-2 rounded-lg"
+            >
               Earn More Points
             </Button>
           </div>

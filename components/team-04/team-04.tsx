@@ -6,53 +6,53 @@ import { BasicBackgroundPattern } from "@/components/ui/background-patterns/basi
 
 const teamMembers = [
   {
-    name: "John Doe",
+    name: "Paul Isaiah",
     title: "Founder & CEO",
-    bio: "Former co-founder of Opendoor. Early staff at Spotify and Clearbit.",
-    imageUrl: "/team-pics/person1m.jpeg",
-  },
-  {
-    name: "Jane Doe",
-    title: "Engineering Manager",
-    bio: "Lead engineering teams at Figma, Pitch, and Protocol Labs.",
+    bio: "Winner of Smart India Hackathon 2024",
     imageUrl: "/team-pics/person2f.jpeg",
   },
   {
-    name: "Bob Smith",
-    title: "Product Manager",
-    bio: "Former PM for Linear, Lambda School, and On Deck.",
+    name: "Athish N S",
+    title: "Co-Founder & CTO",
+    bio: "Winner of Smart India Hackathon 2024",
+    imageUrl: "/team-pics/person1m.jpeg",
+  },
+  {
+    name: "Ankit Karketa",
+    title: "Product Research",
+    bio: "B.tech in Computer Science",
     imageUrl: "/team-pics/person3m.jpeg",
   },
   {
-    name: "Peter Johnson",
-    title: "Frontend Developer",
-    bio: "Former frontend dev for Linear, Coinbase, and Postscript.",
-    imageUrl: "/team-pics/person4m.jpeg",
+    name: "Mahi Prasad",
+    title: "UI/UX Designer",
+    bio: "Master in Psychology and 10+ publications",
+    imageUrl: "/team-pics/mahi-headshot.jpg",
   },
-  {
-    name: "David Lee",
-    title: "Backend Developer",
-    bio: "Lead backend dev at Clearbit. Former Clearbit and Loom.",
-    imageUrl: "/team-pics/person5m.jpeg",
-  },
-  {
-    name: "Sarah Williams",
-    title: "Product Designer",
-    bio: "Founding design team at Figma. Former Pleo, Stripe, and Tile.",
-    imageUrl: "/team-pics/person6f.jpeg",
-  },
-  {
-    name: "Michael Brown",
-    title: "UX Researcher",
-    bio: "Lead user research for Slack. Contractor for Netflix and Udacity.",
-    imageUrl: "/team-pics/person7m.jpeg",
-  },
-  {
-    name: "Elizabeth Johnson",
-    title: "Customer Success",
-    bio: "Lead CX at Wealthsimple. Former PagerDuty and Sqreen.",
-    imageUrl: "/team-pics/person8f.jpeg",
-  },
+  // {
+  //   name: "David Lee",
+  //   title: "Backend Developer",
+  //   bio: "Lead backend dev at Clearbit. Former Clearbit and Loom.",
+  //   imageUrl: "/team-pics/person5m.jpeg",
+  // },
+  // {
+  //   name: "Sarah Williams",
+  //   title: "Product Designer",
+  //   bio: "Founding design team at Figma. Former Pleo, Stripe, and Tile.",
+  //   imageUrl: "/team-pics/person6f.jpeg",
+  // },
+  // {
+  //   name: "Michael Brown",
+  //   title: "UX Researcher",
+  //   bio: "Lead user research for Slack. Contractor for Netflix and Udacity.",
+  //   imageUrl: "/team-pics/person7m.jpeg",
+  // },
+  // {
+  //   name: "Elizabeth Johnson",
+  //   title: "Customer Success",
+  //   bio: "Lead CX at Wealthsimple. Former PagerDuty and Sqreen.",
+  //   imageUrl: "/team-pics/person8f.jpeg",
+  // },
 ];
 
 const Team04Page = () => {
@@ -79,7 +79,10 @@ const Team04Page = () => {
 
       <div className="w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-10 gap-y-12">
         {teamMembers.map((member) => (
-          <div key={member.name} className="relative w-full min-h-[400px] border-2 border-primary/5 rounded-lg shadow-lg shadow-primary/5">
+          <div
+            key={member.name}
+            className="relative w-full min-h-[400px] border-2 border-primary/5 rounded-lg shadow-lg shadow-primary/5"
+          >
             <div className="absolute inset-0">
               <BasicBackgroundPattern />
             </div>

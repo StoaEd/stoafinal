@@ -146,17 +146,27 @@ const Leaderboard: React.FC = () => {
   if (loading) return <p className="text-center">Loading...</p>;
 
   return (
-    <div className="p-6 max-w-lg mx-auto">
-      <h1 className="text-2xl font-bold text-center mb-4">Leaderboard</h1>
-      <Card className="shadow-lg p-4">
-        <CardContent>
-          <ul className="space-y-2">
+    <div className="p-2 w-full h-full mb-2 flex flex-col rounded-lg justify-center items-center bg-gradient-to-b from-primary/0 to-primary/5  text-white">
+      <h1 className="text-3xl font-extrabold text-center mb-6">Leaderboard</h1>
+      <Card className="shadow-lg p-4 bg-gradient-to-b from-primary/5 to-primary/0 text-primary rounded-lg">
+        <CardContent className="px-0 ">
+          <ul className="space-y-4">
             {users.map((user, index) => (
-              <li key={index} className="p-2 rounded-md flex items-center gap-2">
-                <span className="font-bold">
+              <li
+                key={index}
+                className="p-4 rounded-lg flex items-center gap-4 bg-secondary border-2 border-primary/10 shadow-md"
+              >
+                <span className="font-bold text-lg">
                   {getBadge(index)} Rank {index + 1}:
-                </span>{" "}
-                {user.username ?? user.email ?? "Unknown User"} - {user.score} points ({user.rank})
+                </span>
+                <div className="flex-1">
+                  <p className="font-medium">
+                    {user.username ?? user.email ?? "Unknown User"}
+                  </p>
+                  <p className="text-sm text-gray-600">
+                    {user.score} points ({user.rank})
+                  </p>
+                </div>
               </li>
             ))}
           </ul>

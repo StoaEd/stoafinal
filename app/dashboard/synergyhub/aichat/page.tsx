@@ -6,9 +6,6 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Send, Mic, MicOff } from "lucide-react";
 
-// const MODEL = "models/ggemini-2.0-flash";
-// const API_KEY = "AIzaSyA6nurUo8o4U5fluQA-TyAUW5al37znqzM";
-// const HOST = "generativelanguage.googleapis.com";
 
 const Chatbot: React.FC = () => {
     const [messages, setMessages] = useState<{ text: string; sender: "user" | "bot" }[]>([]);

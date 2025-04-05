@@ -153,7 +153,7 @@ export default function NotesPage() {
   return (
     <SidebarInset className="bg-secondary/0">
       <div className="flex flex-1 flex-col gap-4 p-4 pt-0">
-        <div className="relative min-h-[70vh] max-w-3xl flex-1 border-2 rounded-xl md:min-h-min p-10 flex flex-col gap-4 bg-[#222]">
+        <div className="overflow-hidden relative min-h-[70vh] max-w-3xl flex-1 border-2 rounded-xl md:min-h-min p-10 flex flex-col gap-4 bg-[#222]">
           <MediumBackgroundPattern />
           <div className="flex flex-col z-5 gap-4 ">
             <h1 className="scroll-m-20 text-4xl font-extrabold tracking-tight md:text-4xl ">
