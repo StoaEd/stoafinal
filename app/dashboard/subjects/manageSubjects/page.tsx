@@ -1,5 +1,4 @@
 "use client";
-
 import { getCurrentUserId } from "@/lib/firebase/auth";
 
 import { db } from "@/lib/firebase/firebase";
