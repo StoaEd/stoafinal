@@ -52,9 +52,9 @@ export default function DashBoard({
 
 
   return (
-    <SidebarProvider>
+    <SidebarProvider className="h-screen">
       <AppSidebar className="bg-secondary/50"/>
-      <SidebarInset className="bg-secondary/47">
+      <SidebarInset className="bg-secondary/47 h-full">
       <HeaderWithBreadcrumbs />
       {children}
       </SidebarInset>

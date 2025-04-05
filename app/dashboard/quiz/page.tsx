@@ -91,7 +91,7 @@ const QuizPage: React.FC = () => {
     }
   };
     return (
-    <div className="p-6 max-w-2xl mx-auto">
+    <div className="p-6 max-w-2xl  m-auto max-h-screen overflow-y-auto ">
       <h1 className="text-2xl font-bold mb-4">AI-Powered Quiz Generator</h1>
       <Input placeholder="Enter subject" value={subject} onChange={(e) => setSubject(e.target.value)} className="mb-2" />
       <Input type="number" placeholder="Number of questions" value={numQuestions} onChange={(e) => setNumQuestions(Number(e.target.value))} className="mb-4" />
@@ -100,7 +100,7 @@ const QuizPage: React.FC = () => {
       {questions.length > 0 && (
         <div className="mt-6">
           {questions.map((q, index) => (
-            <Card key={index} className="mb-4">
+            <Card key={index} className="mb-4 bg-secondary/30">
               <CardContent>
                 <p className="font-semibold">{q.question}</p>
                 <Textarea

@@ -5,6 +5,7 @@ import { auth, db } from "@/lib/firebase/firebase";
 import { doc, getDoc } from "firebase/firestore";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Loader2, User, CheckCircle, Briefcase } from "lucide-react";
+import { BasicBackgroundPattern } from "@/components/ui/background-patterns/basic-background";
 
 const UserPortfolio = () => {
   const user = auth.currentUser;
@@ -46,11 +47,17 @@ const UserPortfolio = () => {
 
   return (
     <div className="max-w-3xl mx-auto p-6">
-      <Card className="shadow-lg rounded-xl">
+      <Card className="shadow-lg relative rounded-xl bg-secondary/1 border-2 border-primary/10">
+        <div className="absolute inset-0 z-0">
+          <BasicBackgroundPattern />
+        </div>
+
         <CardHeader className="text-center">
-          <User className="h-14 w-14 mx-auto text-gray-700" />
-          <CardTitle className="text-2xl font-semibold mt-2">{userData.username || "Unnamed User"}</CardTitle>
-          <p className="text-gray-500">{user?.email || "No email available"}</p>
+          <User className="h-14 w-14 mx-auto text-primary" />
+          <CardTitle className="text-2xl font-semibold mt-2">
+            {userData.username || "Unnamed User"}
+          </CardTitle>
+          <p className="text-primary">{user?.email || "No email available"}</p>
         </CardHeader>
         <CardContent className="space-y-6">
           {/* Skills Section */}
@@ -59,13 +66,16 @@ const UserPortfolio = () => {
             {userData.skills && userData.skills.length > 0 ? (
               <ul className="flex flex-wrap gap-2">
                 {userData.skills.map((skill, index) => (
-                  <span key={index} className="bg-blue-500 text-white px-3 py-1 rounded-full text-sm">
+                  <span
+                    key={index}
+                    className="bg-blue-500 text-white px-3 py-1 rounded-full text-sm"
+                  >
                     {skill}
                   </span>
                 ))}
               </ul>
             ) : (
-              <p className="text-gray-500">No skills added yet.</p>
+              <p className="text-primary">No skills added yet.</p>
             )}
           </div>
 
@@ -75,14 +85,17 @@ const UserPortfolio = () => {
             {userData.achievements && userData.achievements.length > 0 ? (
               <ul className="list-disc pl-5">
                 {userData.achievements.map((achievement, index) => (
-                  <li key={index} className="text-gray-700 flex items-center gap-2">
+                  <li
+                    key={index}
+                    className="text-primary/70 flex items-center gap-2"
+                  >
                     <CheckCircle className="text-green-500 h-5 w-5" />
                     {achievement}
                   </li>
                 ))}
               </ul>
             ) : (
-              <p className="text-gray-500">No achievements recorded.</p>
+              <p className="text-primary/70">No achievements recorded.</p>
             )}
           </div>
 
@@ -92,16 +105,24 @@ const UserPortfolio = () => {
             {userData.projects && userData.projects.length > 0 ? (
               <ul className="list-disc pl-5">
                 {userData.projects.map((project, index) => (
-                  <li key={index} className="text-gray-700 flex items-center gap-2">
+                  <li
+                    key={index}
+                    className="text-primary flex items-center gap-2"
+                  >
                     <Briefcase className="text-indigo-500 h-5 w-5" />
-                    <a href={project.link} target="_blank" rel="noopener noreferrer" className="text-blue-600 underline">
+                    <a
+                      href={project.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-blue-600 underline"
+                    >
                       {project.name}
                     </a>
                   </li>
                 ))}
               </ul>
             ) : (
-              <p className="text-gray-500">No projects added yet.</p>
+              <p className="text-primary/70">No projects added yet.</p>
             )}
           </div>
         </CardContent>

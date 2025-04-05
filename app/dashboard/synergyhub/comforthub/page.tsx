@@ -94,7 +94,7 @@ export default function SpecialAbledChat() {
       </div>
       <div>
         {posts.map((post) => (
-          <Card key={post.id} className="mb-4">
+          <Card key={post.id} className="mb-4 bg-secondary/90">
             <CardContent>
               <p><strong>{post.username || post.userEmail}:</strong></p>
               {post.imageUrl && <img src={post.imageUrl} alt="Post" className="w-full h-auto rounded" />}

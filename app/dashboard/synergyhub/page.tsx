@@ -100,7 +100,7 @@ export default function RedditClone() {
   };
 
   return (
-    <div className="max-w-2xl mx-auto p-4">
+    <div className="max-w-2xl min-w-xl mx-auto p-4">
       <div className="mb-4 flex flex-col space-y-2">
         <input
           className="p-2 border rounded"
@@ -113,7 +113,7 @@ export default function RedditClone() {
       </div>
       <div>
         {posts.map((post) => (
-          <Card key={post.id} className="mb-4">
+          <Card key={post.id} className="mb-4 bg-secondary/50   ">
             <CardContent>
               <p><strong>{post.username || post.userEmail} posted:</strong></p>
               {/* eslint-disable-next-line @next/next/no-img-element */}

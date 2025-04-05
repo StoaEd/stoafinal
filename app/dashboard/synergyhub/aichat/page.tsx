@@ -73,15 +73,17 @@ const Chatbot: React.FC = () => {
 
     const speak = (text: string) => {
         if (!synth) return;
+        text=text.replace(/<[^>]*>/g, '');
+        text=text.replace('*',"")
         const utterance = new SpeechSynthesisUtterance(text);
         utterance.lang = "en-US";
         synth.speak(utterance);
     };
 
     return (
-        <div className="max-w-md mx-auto p-6 border rounded-2xl shadow-lg bg-black">
-            <Card>
-                <CardContent className="h-96 overflow-y-auto p-4 space-y-3 bg-gray-900 rounded-lg">
+        <div className="max-w-2xl min-w-xl mx-auto p-6 border rounded-2xl shadow-lg bg-secondary  ">
+            <Card className="bg-secondary min-h-96 max-h-96">
+                <CardContent className="h-full overflow-y-auto p-4 space-y-3  rounded-lg">
                     {messages.map((msg, index) => (
                         <div
                             key={index}

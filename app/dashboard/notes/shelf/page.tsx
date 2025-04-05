@@ -15,7 +15,7 @@ import { useRouter } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { MediumBackgroundPattern } from "@/components/ui/background-patterns/medium-background";
 import { SidebarInset } from "@/components/ui/sidebar";
-import HeaderWithBreadcrumbs from "@/components/ui/ui-templates/header-with-breadcrumbs";
+// import HeaderWithBreadcrumbs from "@/components/ui/ui-templates/header-with-breadcrumbs";
 
 // Firebase
 import { db } from "@/lib/firebase/firebase";
@@ -32,7 +32,7 @@ interface NoteSummary {
 // Components
 const NoteCard = ({ note }: { note: NoteSummary }) => (
   <a href={`/dashboard/notes/shelf/${note.NoteId}`} key={note.NoteId}>
-    <div className="bg-muted/20 p-4 rounded-lg hover:bg-primary/3 mb-2 border-2 border-primary/10">
+    <div className="bg-muted/20 p-4 rounded-lg hover:bg-primary/3  border-2 border-primary/10">
       {note.title}
     </div>
   </a>
@@ -151,17 +151,16 @@ export default function NotesPage() {
 
 
   return (
-    <SidebarInset className="bg-secondary/47">
-      <HeaderWithBreadcrumbs />
+    <SidebarInset className="bg-secondary/0">
       <div className="flex flex-1 flex-col gap-4 p-4 pt-0">
-        <div className="relative min-h-[70vh] flex-1 border-2 rounded-xl md:min-h-min p-10 flex flex-col gap-4">
+        <div className="relative min-h-[70vh] max-w-3xl flex-1 border-2 rounded-xl md:min-h-min p-10 flex flex-col gap-4 bg-[#222]">
           <MediumBackgroundPattern />
-          <div className="flex flex-col z-5 gap-4">
-            <h1 className="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl">
+          <div className="flex flex-col z-5 gap-4 ">
+            <h1 className="scroll-m-20 text-4xl font-extrabold tracking-tight md:text-4xl ">
               Notes
             </h1>
             <ActionButtons onCreateNote={handleCreateNote} />
-            <div className="bg-secondary/10 flex-grow h-full w-full rounded-lg  border-primary/10">
+            <div className="bg-secondary/60 border-2 p-2 gap-2 flex flex-col h-full w-full rounded-lg  border-primary/10">
               {notesSummaryList.map((note) => (
                 <NoteCard key={note.NoteId} note={note} />
               ))}

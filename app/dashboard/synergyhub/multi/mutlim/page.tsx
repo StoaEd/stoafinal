@@ -48,15 +48,15 @@ export default function Home() {
 
   return (
     <>
-      <h1 className="text-4xl font-bold text-zinc-800 p-8 pb-0">
+      <h1 className="text-4xl font-bold text-primary p-8 pb-0">
         Multimodal Live Chat
       </h1>
-      <div className="flex gap-8 p-8">
+      <div className="flex gap-8 p-8  rounded-xl">
         <CameraPreview onTranscription={handleTranscription} />
 
-        <div className="w-[640px] bg-white">
-          <ScrollArea className="h-[540px] p-6">
-            <div className="space-y-6">
+        <div className="w-[640px] h-full bg-white/90 rounded-xl">
+          <ScrollArea className="h-full p-6">
+            <div className="space-y-6 ">
               <GeminiMessage text="Hi! I'm Gemini. I can see and hear you. Let's chat!" />
               {messages.map((message, index) => (
                 message.type === 'human' ? (

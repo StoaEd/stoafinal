@@ -5,7 +5,6 @@ import { collection, getDocs, query, where, doc, updateDoc } from "firebase/fire
 import { db } from "@/lib/firebase/firebase";
 import { getCurrentUserId } from "@/lib/firebase/auth";
 
-// Sample data for topics and associated YouTube videos & textbooks
 const topicsBySubjectAndGrade: Record<string, Record<number, { topic: string; videoId: string; bookUrl: string }[]>> = {
   Math: {
     1: [
@@ -68,21 +67,12 @@ export default function MySubjects() {
   }, []);
 
   const handleGradeChange = (subject: string, grade: number) => {
-    setSubjectGrades((prev) => ({
-      ...prev,
-      [subject]: grade,
-    }));
-    setSubjectTopics((prev) => ({
-      ...prev,
-      [subject]: "", // Reset topic selection when grade changes
-    }));
+    setSubjectGrades((prev) => ({ ...prev, [subject]: grade }));
+    setSubjectTopics((prev) => ({ ...prev, [subject]: "" }));
   };
 
   const handleTopicChange = (subject: string, topic: string) => {
-    setSubjectTopics((prev) => ({
-      ...prev,
-      [subject]: topic,
-    }));
+    setSubjectTopics((prev) => ({ ...prev, [subject]: topic }));
   };
 
   const handleSave = async () => {
@@ -101,9 +91,8 @@ export default function MySubjects() {
   };
 
   return (
-    <div className="p-6 max-w-lg mx-auto">
+    <div className="p-6 max-w-lg mx-auto h-full overflow-scroll scroll w-lg">
       <h2 className="text-2xl font-bold mb-4">Select Your Class & Topics</h2>
-
       {loading ? (
         <p className="text-gray-500">Loading...</p>
       ) : subjects.length > 0 ? (
@@ -113,17 +102,16 @@ export default function MySubjects() {
             const topics = selectedGrade ? topicsBySubjectAndGrade[subject]?.[selectedGrade] : [];
 
             return (
-              <div key={subject} className="p-3 rounded bg-black text-white space-y-2">
-                {/* Grade Selection */}
+              <div key={subject} className="p-3  rounded-lg bg-secondary text-white space-y-2">
                 <div className="flex items-center justify-between">
                   <span className="font-semibold">{subject}</span>
                   <select
                     value={selectedGrade || (subject === "Science" ? 6 : 1)}
                     onChange={(e) => handleGradeChange(subject, Number(e.target.value))}
-                    className="p-2 border rounded bg-black text-white"
+                    className="p-2 border rounded-lg bg-secondary text-white"
                   >
                     {Array.from({ length: 12 }, (_, i) => i + 1)
-                      .filter((grade) => subject !== "Science" || grade >= 6) // Science starts from grade 6
+                      .filter((grade) => subject !== "Science" || grade >= 6)
                       .map((grade) => (
                         <option key={grade} value={grade}>
                           Grade {grade}
@@ -131,8 +119,6 @@ export default function MySubjects() {
                       ))}
                   </select>
                 </div>
-
-                {/* Topics Dropdown */}
                 {topics?.length > 0 && (
                   <div className="flex items-center justify-between">
                     <span className="font-semibold">Topic:</span>
@@ -152,8 +138,6 @@ export default function MySubjects() {
                     </select>
                   </div>
                 )}
-
-                {/* Display YouTube Video & Download Link */}
                 {subjectTopics[subject] && topics?.length > 0 && (
                   (() => {
                     const selectedTopic = topics.find((t) => t.topic === subjectTopics[subject]);
@@ -161,7 +145,6 @@ export default function MySubjects() {
 
                     return (
                       <div className="mt-4 space-y-3">
-                        {/* Embedded YouTube Video (Square & Shifted Left) */}
                         <div className="w-full flex justify-start">
                           <iframe
                             className="w-[400px] h-[400px] md:w-[500px] md:h-[500px] lg:w-[600px] lg:h-[600px] rounded-lg"
@@ -170,8 +153,6 @@ export default function MySubjects() {
                             allowFullScreen
                           ></iframe>
                         </div>
-
-                        {/* Download Link */}
                         <a
                           href={selectedTopic.bookUrl}
                           download
@@ -186,7 +167,6 @@ export default function MySubjects() {
               </div>
             );
           })}
-
           <button onClick={handleSave} className="mt-4 bg-blue-600 text-white px-4 py-2 rounded">
             Save Selection
           </button>

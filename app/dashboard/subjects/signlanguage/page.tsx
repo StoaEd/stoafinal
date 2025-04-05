@@ -93,20 +93,20 @@ const VideoPlayer: React.FC = () => {
   }
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-black text-white p-6">
+    <div className="flex flex-col items-center justify-center h-full bg-transparent text-white p-6">
       <h1 className="text-4xl font-bold mb-6 text-gray-300">Teaching Sign Language</h1>
 
-      <div className="bg-gray-900 p-6 rounded-xl shadow-lg w-full max-w-lg">
+      <div className="bg-secondary/50 border-2 border-primary/10 p-6 rounded-xl shadow-lg w-full max-w-lg">
         <input
           type="text"
           placeholder="Enter text..."
           value={inputText}
           onChange={handleInputChange}
-          className="w-full p-3 text-lg border border-gray-700 rounded-lg bg-black text-white focus:outline-none"
+          className="w-full p-3 text-lg border border-gray-700 rounded-lg bg-secondary text-primary focus:outline-none"
         />
         <button
           onClick={handlePlayVideo}
-          className="w-full mt-4 bg-gray-700 hover:bg-gray-600 text-white text-lg py-3 rounded-lg transition"
+          className="w-full mt-4 bg-gray-700 hover:bg-gray-600 text-primary text-lg py-3 rounded-lg transition"
         >
           ▶ Convert
         </button>
@@ -120,7 +120,7 @@ const VideoPlayer: React.FC = () => {
               src={videoQueue[currentVideoIndex]}
               onEnded={handleVideoEnd}
               autoPlay
-              className="w-[900px] h-[500px] rounded-xl shadow-2xl border-4 border-gray-600"
+              className="w-[800px]  rounded-xl shadow-2xl border-4 border-gray-600"
             />
             <p className="mt-4 text-3xl font-bold bg-gray-700 px-6 py-2 rounded-lg shadow-lg text-white">
               {currentWord}

@@ -118,30 +118,16 @@ export default function Page() {
   };
 
   return (
-    <SidebarInset className="bg-secondary/50 h-screen overflow-scroll scroll-auto">
-      <header className="flex h-16 items-center gap-4 px-4 border-b">
-        <SidebarTrigger className="-ml-1" />
-        <Separator orientation="vertical" className="h-6" />
-        <Breadcrumb>
-          <BreadcrumbList>
-            <BreadcrumbItem className="hidden md:block">
-              <BreadcrumbLink href="#">Manage Subjects</BreadcrumbLink>
-            </BreadcrumbItem>
-          </BreadcrumbList>
-        </Breadcrumb>
-        <div className="ml-auto">
-          <ModeToggle />
-        </div>
-      </header>
+
       <div className="p-6 space-y-6">
-        <h2 className="text-4xl font-bold text-gray-800">Manage Subjects</h2>
-        <p className="text-gray-600">Select or remove subjects below.</p>
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+        <h2 className="text-4xl font-bold text-primary">Manage Subjects</h2>
+        <p className="text-primary">Select or remove subjects below.</p>
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 max-w-sm">
           {availableSubjects.map((subject) => (
             <div
               key={subject}
-              className={`p-4 rounded-xl text-center cursor-pointer transition-colors shadow-md ${
-                subjects.includes(subject) ? "bg-green-500 text-white" : "bg-gray-200 text-gray-800"
+              className={`p-4 rounded-xl  text-center cursor-pointer transition-colors shadow-md ${
+                subjects.includes(subject) ? "bg-amber-100/10 text-white" : "bg-gray-200 text-gray-800"
               }`}
               onClick={() => toggleSubject(subject)}
             >
@@ -149,7 +135,7 @@ export default function Page() {
             </div>
           ))}
         </div>
-        <h3 className="text-2xl font-semibold text-gray-800 mt-6">Selected Subjects:</h3>
+        <h3 className="text-2xl font-semibold text-primary mt-6">Selected Subjects:</h3>
         <div className="flex flex-wrap gap-3">
           {subjects.length > 0 ? (
             subjects.map((subject, index) => (
@@ -188,6 +174,5 @@ export default function Page() {
           </>
         )}
       </div>
-    </SidebarInset>
   );
 }

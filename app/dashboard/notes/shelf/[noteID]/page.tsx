@@ -5,7 +5,7 @@ import { useParams } from "next/navigation";
 import { doc, getDoc, updateDoc } from "firebase/firestore";
 import { MediumBackgroundPattern } from "@/components/ui/background-patterns/medium-background";
 import { SidebarInset } from "@/components/ui/sidebar";
-import HeaderWithBreadcrumbs from "@/components/ui/ui-templates/header-with-breadcrumbs";
+// import HeaderWithBreadcrumbs from "@/components/ui/ui-templates/header-with-breadcrumbs";
 import Editor from "@/components/editor/Editor";
 import { db } from "@/lib/firebase/firebase";
 
@@ -58,8 +58,7 @@ export default function NotesPage() {
   };
 
   return (
-    <SidebarInset className="bg-secondary/47">
-      <HeaderWithBreadcrumbs />
+    <SidebarInset className="bg-secondary/0">
       <div className="flex flex-1 flex-col gap-4 p-4 pt-0">
         <div className="relative bg-secondary/50 min-h-[70vh] flex-1 border-2 rounded-xl md:min-h-min p-10 flex flex-col gap-4">
           <MediumBackgroundPattern />
@@ -68,7 +67,7 @@ export default function NotesPage() {
               {loading ? "Loading..." : noteTitle}
             </h1>
             <p className="text note-metadata">Below are the notes you have created. Click on a note to view it.</p>
-            <div className="relative flex-grow h-full w-full rounded-lg shadow-primary/2 shadow-lg bg-secondary/30 p-4">
+            <div className="relative flex-grow h-full w-full rounded-lg shadow-primary/2 shadow-lg bg-secondary/40 border-primary/5 border-2 0 p-4">
               <div className="h-full w-full">
                 {loading ? (
                   <div>Loading...</div>

@@ -100,9 +100,9 @@ const GradingSystem: React.FC = () => {
   const rank = getRank(totalScore);
 
   return (
-    <div className="p-6 max-w-lg mx-auto">
+    <div className="p-6 max-w-lg mx-auto ">
       <h1 className="text-2xl font-bold text-center mb-4">Grading System</h1>
-      <Card className="shadow-lg p-4">
+      <Card className="shadow-lg pb-4 p-4 bg-secondary ">
         <CardContent>
           <p className="text-lg font-semibold text-center">Your Score: {totalScore}</p>
           <div className="w-full mt-4 relative h-6 bg-gray-200 rounded-lg overflow-hidden">

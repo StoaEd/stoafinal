@@ -50,7 +50,7 @@ const TracingCanvas = ({ character, onSuccess, colorBlindMode }: { character: st
     const similarityScore = Math.random() * 100; // Simulating AI-based similarity check
     clearCanvas();
 
-    if (similarityScore >= 60) {
+    if (similarityScore >= 45) {
       alert("Wowwwww! Moving next...");
       onSuccess(); // Move to next character/word
     } else {
@@ -77,9 +77,9 @@ const TracingCanvas = ({ character, onSuccess, colorBlindMode }: { character: st
           onTouchMove={draw}
           onTouchEnd={stopDrawing}
         />
-        <div className="flex gap-2 mt-4">
-          <Button className="w-full" onClick={clearCanvas}>Clear</Button>
-          <Button className={`w-full ${colorBlindMode ? 'bg-gray-500' : 'bg-green-500'}`} onClick={checkSimilarity}>Check</Button>
+        <div className="flex flex-row gap-2 mt-4">
+          <Button className="" onClick={clearCanvas}>Clear</Button>
+          <Button className={` ${colorBlindMode ? 'bg-gray-500' : 'bg-green-500'}`} onClick={checkSimilarity}>Check</Button>
         </div>
       </CardContent>
     </Card>
@@ -140,7 +140,7 @@ export default function LearningApp() {
   };
 
   return (
-    <div className="max-w-2xl mx-auto p-6">
+    <div className="max-w-2xl mx-auto p-6 h-full overflow-y-auto">
       <h1 className="text-center text-3xl font-bold mb-4">Dyslexic-Friendly Learning</h1>
 
       <div className="flex justify-center items-center mb-4">

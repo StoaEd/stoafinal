@@ -13,6 +13,7 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Loader2, X } from "lucide-react";
+import { BasicBackgroundPattern } from "@/components/ui/background-patterns/basic-background";
 
 const UserDashboard = () => {
   const user = auth.currentUser;
@@ -115,8 +116,11 @@ const UserDashboard = () => {
   };
 
   return (
-    <div className="max-w-lg mx-auto p-6">
-      <Card className="shadow-lg rounded-xl">
+    <div className="max-w-3xl mx-auto p-6">
+      <Card className="shadow-lg relative rounded-xl bg-secondary/1 border-2 border-primary/10">
+                <div className="absolute inset-0 -z-10">
+                  <BasicBackgroundPattern />
+                </div>
         <CardHeader>
           <CardTitle className="text-center text-2xl font-semibold">User Dashboard</CardTitle>
         </CardHeader>
@@ -154,9 +158,9 @@ const UserDashboard = () => {
                 <Input type="text" value={newSkill} onChange={(e) => setNewSkill(e.target.value)} placeholder="Add Skill" />
                 <Button onClick={addSkill}>Add</Button>
               </div>
-              <div className="mt-2 space-y-1">
+              <div className="mt-2 grid grid-cols-1 sm:grid-cols-2 gap-2">
                 {skills.map((skill, index) => (
-                  <div key={index} className="flex items-center justify-between p-2 bg-black rounded">
+                  <div key={index} className="flex items-center justify-between rounded-xl px-4 py-1 bg-secondary  border-2 border-primary/10">
                     <span>{skill}</span>
                     <X className="cursor-pointer" onClick={() => removeSkill(index)} />
                   </div>
@@ -171,10 +175,10 @@ const UserDashboard = () => {
                 <Input type="text" value={newAchievement} onChange={(e) => setNewAchievement(e.target.value)} placeholder="Add Achievement" />
                 <Button onClick={addAchievement}>Add</Button>
               </div>
-              <div className="mt-2 space-y-1">
+              <div className="mt-2 grid grid-cols-1 sm:grid-cols-2 gap-2">
                 {achievements.map((achievement, index) => (
-                  <div key={index} className="flex items-center justify-between p-2 bg-balack rounded">
-                    <span>{achievement}</span>
+                  <div key={index} className="flex items-center justify-between rounded-xl px-4 py-1 bg-secondary  border-2 border-primary/10">
+                    <span>{achievement}</span>  
                     <X className="cursor-pointer" onClick={() => removeAchievement(index)} />
                   </div>
                 ))}
