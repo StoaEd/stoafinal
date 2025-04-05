@@ -32,9 +32,9 @@ const Contact03Page = () => (
           </p>
           <Link
             className="font-medium"
-            href="mailto:akashmoradiya3444@gmail.com"
+            href="mailto:stoaedcode@gmail.com"
           >
-            akashmoradiya3444@gmail.com
+            stoaedcode@gmail.com
           </Link>
         </div>
         {/* Chat with us */}
@@ -45,12 +45,12 @@ const Contact03Page = () => (
           <div className="h-12 w-12 flex items-center justify-center bg-primary/10 text-primary rounded-full">
             <MessageCircle />
           </div>
-          <h3 className="mt-8 font-bold text-xl">Live chat</h3>
+          <h3 className="mt-8 font-bold text-xl">Mail chat</h3>
           <p className="mt-2.5 mb-4 text-muted-foreground">
             Our friendly team is here to help.
           </p>
           <Link className="font-medium" href="#">
-            Start new chat
+            stoaedcode@gmail.com
           </Link>
         </div>
         {/* Office */}
@@ -63,14 +63,14 @@ const Contact03Page = () => (
           </div>
           <h3 className="mt-8 font-bold text-xl">Office</h3>
           <p className="mt-2.5 mb-4 text-muted-foreground">
-            Come say hello at our office HQ.
+            Not all who wander are lost.
           </p>
           <Link
             className="font-medium"
             href="https://map.google.com"
             target="_blank"
           >
-            100 Smith Street Collingwood <br /> VIC 3066 AU
+            Confined to Earth, The Solar System, Milky Way (third major planet from sun)
           </Link>
         </div>
         <div className={cardStyle}>
@@ -84,8 +84,8 @@ const Contact03Page = () => (
           <p className="mt-2.5 mb-4 text-muted-foreground">
             Mon-Fri from 8am to 5pm.
           </p>
-          <Link className="font-medium" href="tel:akashmoradiya3444@gmail.com">
-            +1 (555) 000-0000
+          <Link className="font-medium" href="tel:stoaedcode@gmail.com">
+            We will add this soon
           </Link>
         </div>
       </div>

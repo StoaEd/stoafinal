@@ -13,7 +13,7 @@ const generateChunks = (input: string): string[] => {
     .split('.')
     .filter(i => i !== '');
 };
-
+  
 export const generateEmbeddings = async (
   value: string,
 ): Promise<Array<{ embedding: number[]; content: string }>> => {
