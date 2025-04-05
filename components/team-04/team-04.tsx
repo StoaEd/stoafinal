@@ -60,20 +60,19 @@ const Team04Page = () => {
     <div className="flex flex-col justify-center py-8 sm:py-16 px-6 lg:px-8 max-w-screen-xl mx-auto gap-16">
       <div className="text-center max-w-2xl mx-auto">
         <b className="text-center text-muted-foreground text-base font-semibold">
-          We&apos;re hiring!
+          Hello World!
         </b>
         <h2 className="mt-3 text-4xl sm:text-5xl font-bold tracking-tight">
           Meet Our Team
         </h2>
         <p className="mt-6 text-base sm:text-lg">
-          Our philosophy is simple — hire a team of diverse, passionate people
-          and foster a culture that empowers you to do you best work.
+          Our philosophy is simple we hire talented people who are tired of the education system and are looking to change it.
         </p>
         <div className="mt-8 flex flex-col sm:flex-row-reverse sm:justify-center gap-3">
-          <Button size="lg">Open Positions</Button>
+          {/* <Button size="lg">Open Positions</Button>
           <Button size="lg" variant="outline">
             About Us
-          </Button>
+          </Button> */}
         </div>
       </div>
 
