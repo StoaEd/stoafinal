@@ -1,0 +1,8 @@
+[
+    {
+      "origin": ["http://localhost:3000", "https://stoafinal.vercel.app"],
+      "method": ["GET", "POST", "HEAD", "OPTIONS"],
+      "responseHeader": ["Content-Type", "Access-Control-Allow-Origin", "Content-Length", "Content-Range"],
+      "maxAgeSeconds": 3600
+    }
+]
