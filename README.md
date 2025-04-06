@@ -62,7 +62,12 @@ DATABASE_URL=""
 ⚠️ **Note:** Ensure your `.env.local` file is not pushed to GitHub (it should already be listed in `.gitignore` for security).
 
 ---
-
+##Test Credentials:
+```
+test@gdsc.com
+test@123
+```
+---
 ## 📋 Change Log
 
 ### v0.1 – Initial Setup
@@ -135,3 +140,4 @@ Want to use **Stoa** on the go? Get the Android app version now!
 
 > 💡 Compatible with Android 8.0+ | Size: ~18.3 MB | Updated: April 2025
 ---
+
