@@ -62,7 +62,7 @@ DATABASE_URL=""
 ⚠️ **Note:** Ensure your `.env.local` file is not pushed to GitHub (it should already be listed in `.gitignore` for security).
 
 ---
-##Test Credentials:
+## Test Credentials:
 ```
 test@gdsc.com
 test@123
