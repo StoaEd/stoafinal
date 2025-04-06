@@ -33,3 +33,6 @@ v0.3
 - Added Profile managment
 - Added Subject managment
 - Added Gamification features.
+
+v0.3.1
+- Scrollbar Ui and layoiut fixes
