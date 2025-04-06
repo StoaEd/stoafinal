@@ -138,5 +138,4 @@ Want to use **Stoa** on the go? Get the Android app version now!
 👉 **[Download APK](https://github.com/StoaEd/stoa-mobile-apk/blob/main/stoa-mobile-app.apk)**
 
 > 💡 Compatible with Android 8.0+ | Size: ~18.3 MB | Updated: April 2025
-
 ---
