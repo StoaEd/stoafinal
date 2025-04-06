@@ -120,7 +120,7 @@ DATABASE_URL=""
 
 ### v0.8 – Portfolio & Career Tools
 - ✅ Enabled **Digital Portfolio** builder with skill verification
-- ✅ Replaced resumes with **Credential Management System**
+- ✅ Implemented **Credential Management System**
 - ✅ Created **Recruiter View Mode** to access learner profiles
 
 ---
