@@ -78,6 +78,7 @@ const QuizPage: React.FC = () => {
         setIsGrading(false);
       }
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [completion]);
 
   const generateQuiz = async () => {
@@ -85,6 +86,7 @@ const QuizPage: React.FC = () => {
     setScore(null);
     setQuestions([]);
     setUserAnswers([]);
+    setFeedback([]);
 
     try {
       const prompt = `Generate ${numQuestions} ${questionType} quiz questions on ${subject} in JSON format. Each question should have 'question' and 'answer' fields. Return only valid JSON array.`;

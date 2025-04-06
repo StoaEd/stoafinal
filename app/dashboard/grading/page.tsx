@@ -118,7 +118,7 @@ const GradingSystem: React.FC = () => {
           <div className="w-full mt-6 relative h-6 bg-gray-300 rounded-full overflow-hidden">
             <Progress
               style={{ width: `${getProgressPercentage(totalScore)}%` }}
-              className="h-full bg-gradient-to-r from-secondary to-primary transition-all duration-500"
+              className="h-full bg-gradient-to-r from-blue-300 to-blue-500 transition-all duration-500"
             />
           </div>
           <p className="text-center mt-6 text-2xl font-bold text-primary">Rank: {rank}</p>
