@@ -109,7 +109,6 @@ export default function Page() {
   };
 
   return (
-
       <div className="p-6 space-y-6">
         <h2 className="text-4xl font-bold text-primary">Manage Subjects</h2>
         <p className="text-primary">Select or remove subjects below.</p>
