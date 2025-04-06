@@ -82,8 +82,8 @@ DATABASE_URL=""
 
 ### v0.3 – Notes System + Voice-to-Text
 - ✅ Added **Notes Shelf** with full CRUD support
-- ✅ Integrated **Voice-to-Text** via Gemini API
-- ✅ Synced all notes with Firestore in real time
+- ✅ Integrated **Voice-to-Text**
+- ✅ Synced all notes with Firestore 
 
 ---
 
@@ -91,7 +91,6 @@ DATABASE_URL=""
 - ✅ Built personalized **Dashboard** with learning overview
 - ✅ Implemented **Agenda System** for upcoming tasks and goals
 - ✅ Developed **Milestone Tracker** to visualize progress
-- ✅ Dashboard widgets for notes, progress, and active courses
 
 ---
 
@@ -104,9 +103,7 @@ DATABASE_URL=""
 ---
 
 ### v0.6 – AI Personalization & Smart Quiz Engine
-- ✅ Integrated **Personalization Engine** for adaptive learning paths
 - ✅ Developed **RAG-based AI Quiz Engine** with smart feedback
-- ✅ Implemented mistake tracking and reference-based answers
 - ✅ Added **Global Leaderboard** synced with quiz results
 
 ---
@@ -121,13 +118,12 @@ DATABASE_URL=""
 ### v0.8 – Portfolio & Career Tools
 - ✅ Enabled **Digital Portfolio** builder with skill verification
 - ✅ Implemented **Credential Management System**
-- ✅ Created **Recruiter View Mode** to access learner profiles
 
 ---
 
 ### v0.9 – Accessibility & Multimodal Learning
 - ✅ Added **Multimodal Input**: Text, Voice, Camera, Sign Language
-- ✅ Built-in accessibility support: colorblind mode, dyslexia overlay
+- ✅ Built-in accessibility support: colorblind mode
 - ✅ Mobile-first UI with responsive layout and a11y support
 
 
