@@ -1,7 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 "use client";
 
-import Image from "next/image";
+// import Image from "next/image";
 
 import { useState, useEffect } from "react";
 import { db } from "@/lib/firebase/firebase";
@@ -52,7 +52,7 @@ interface Post {
   userEmail: string;
   username?: string;
   imageUrl?: string;
-  createdAt?: any;
+  createdAt?: any; // eslint-disable-line @typescript-eslint/no-explicit-any
 }
 
 export default function SpecialAbledChat() {

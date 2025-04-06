@@ -1,19 +1,8 @@
 "use client"
 
 import {
-  Breadcrumb,
-  BreadcrumbItem,
-  BreadcrumbLink,
-  BreadcrumbList,
-  BreadcrumbPage,
-  BreadcrumbSeparator,
-} from "@/components/ui/breadcrumb"
-import { Separator } from "@/components/ui/separator"
-import {
   SidebarInset,
-  SidebarTrigger,
 } from "@/components/ui/sidebar"
-import { ModeToggle } from "@/components/ui/toggle-theme";
 import HeaderWithBreadcrumbs from "@/components/ui/ui-templates/header-with-breadcrumbs";
 
 export default function Page() {

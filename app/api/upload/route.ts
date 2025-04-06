@@ -1,7 +1,9 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { Storage } from '@google-cloud/storage';
-import { useAuth } from "@/lib/firebase/hooks/useAuth";
-
+// Remove useAuth import
+// import { auth } from '@/lib/firebase/firebase';
+// Import admin SDK if needed for server-side auth
+// import { getAuth } from 'firebase-admin/auth';
 
 // Initialize Google Cloud Storage
 const storage = new Storage({
@@ -16,24 +18,19 @@ const bucketName = process.env.NEXT_PUBLIC_GOOGLE_CLOUD_BUCKET_NAME || 'site-dat
 
 export async function POST(request: NextRequest) {
   try {
-    // Check if the user is authenticated
-
-    const user = useAuth();
-    if (!user) {
-      return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
-    }
-
+    // Don't use useAuth hook here - it's not valid in server components/API routes
+    // Instead, verify authentication using token from headers or cookies
     
-    // Get form data with the file
     const formData = await request.formData();
     const file = formData.get('file') as File;
+    const filename = formData.get('filename') as string;
     
-    if (!file) {
-      return NextResponse.json({ error: 'No file provided' }, { status: 400 });
+    if (!file || !filename) {
+      return NextResponse.json({ error: 'File and filename are required' }, { status: 400 });
     }
     
     // Create a unique filename
-    const filename = `special_abled_chat/${Date.now()}-${file.name}`;
+    const uniqueFilename = `special_abled_chat/${Date.now()}-${filename}`;
     
     // Convert File to Buffer
     const arrayBuffer = await file.arrayBuffer();
@@ -41,7 +38,7 @@ export async function POST(request: NextRequest) {
     
     // Upload to Google Cloud Storage
     const bucket = storage.bucket(bucketName);
-    const blob = bucket.file(filename);
+    const blob = bucket.file(uniqueFilename);
     
     await blob.save(buffer, {
       metadata: {
@@ -54,12 +51,12 @@ export async function POST(request: NextRequest) {
     await blob.makePublic();
     
     // Get the public URL
-    const publicUrl = `https://storage.googleapis.com/${bucketName}/${filename}`;
+    const publicUrl = `https://storage.googleapis.com/${bucketName}/${uniqueFilename}`;
     
     return NextResponse.json({ url: publicUrl });
     
   } catch (error) {
-    console.error('Upload error:', error);
-    return NextResponse.json({ error: 'Upload failed' }, { status: 500 });
+    console.error('Error uploading file:', error);
+    return NextResponse.json({ error: 'Failed to upload file' }, { status: 500 });
   }
 }
