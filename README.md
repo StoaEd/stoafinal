@@ -36,3 +36,6 @@ v0.3
 
 v0.3.1
 - Scrollbar Ui and layoiut fixes
+
+v0.4.0
+- Added full synergy hub with image upload
