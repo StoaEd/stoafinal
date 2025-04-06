@@ -166,7 +166,7 @@ const QuizPage: React.FC = () => {
   };
 
   return (
-    <div className="p-6 max-w-2xl  m-auto max-h-screen overflow-y-auto ">
+    <div className="p-6 max-w-2xl  m-auto ">
       <h1 className="text-2xl font-bold mb-4">AI-Powered Quiz Generator</h1>
       <DropdownMenu/>
       <div className="mb-4">

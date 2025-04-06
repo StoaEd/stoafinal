@@ -52,11 +52,13 @@ export default function DashBoard({
 
 
   return (
-    <SidebarProvider className="h-screen">
+    <SidebarProvider className="h-screen overflow-y-hidden">
       <AppSidebar className="bg-secondary/50"/>
       <SidebarInset className="bg-secondary/47 h-full">
       <HeaderWithBreadcrumbs />
-      {children}
+      <div className="overflow-auto h-full">
+        {children}
+      </div>
       </SidebarInset>
 
     </SidebarProvider>

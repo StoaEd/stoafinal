@@ -91,7 +91,7 @@ export default function MySubjects() {
   };
 
   return (
-    <div className="p-6 max-w-lg mx-auto h-full overflow-scroll scroll w-lg">
+    <div className="p-6 max-w-lg mx-auto h-full">
       <h2 className="text-2xl font-bold mb-4">Select Your Class & Topics</h2>
       {loading ? (
         <p className="text-gray-500">Loading...</p>
