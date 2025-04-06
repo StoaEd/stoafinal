@@ -3,6 +3,7 @@ import { findRelevantContent } from '@/lib/ai/embedding';
 import { google } from '@ai-sdk/google';
 import { streamText, tool } from 'ai';
 import { z } from 'zod';
+
 // Allow streaming responses up to 30 seconds
 export const maxDuration = 30;
 
