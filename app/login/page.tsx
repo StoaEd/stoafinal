@@ -71,7 +71,7 @@ export default function AuthPage() {
         chatIds: [],
       });
       sessionStorage.setItem('user', JSON.stringify(user));
-      router.push('/dashboarddash/overviewDashboard');
+      router.push('/dashboard/dash/overviewDashboard');
     } catch (error) {
       setError('Failed to sign up. Please try again.');
       console.error(error);
